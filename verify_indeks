@@ -1,0 +1,8 @@
+SELECT indexname, tablename,
+pg_size_pretty(pg_relation_size(indexname::regclass)) AS ukuran
+FROM pg_indexes
+WHERE indexname IN (
+    'idx_fasilitas_geom',
+    'idx_jalan_geom',
+    'idx_wilayah_geom'
+);
