@@ -1,0 +1,19 @@
+EXPLAIN ANALYZE
+SELECT f.nama AS fasilitas, w.nama AS wilayah
+FROM fasilitas_publik f
+JOIN wilayah w 
+ON ST_Intersects(f.geom, w.geom);
+
+EXPLAIN ANALYZE
+SELECT nama 
+FROM fasilitas_publik
+WHERE ST_Distance(
+    geom::geography,
+    ST_GeomFromText('POINT(105.26 -5.42)',4326)::geography
+) < 1000;
+
+EXPLAIN ANALYZE
+SELECT j.nama AS jalan, w.nama AS wilayah
+FROM jalan j
+JOIN wilayah w 
+ON ST_Intersects(j.geom, w.geom);
