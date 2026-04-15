@@ -1,0 +1,8 @@
+CREATE INDEX idx_fasilitas_geom 
+ON fasilitas_publik USING GIST (geom);
+
+CREATE INDEX idx_wilayah_geom 
+ON wilayah USING GIST (geom);
+
+CREATE INDEX idx_jalan_geom 
+ON jalan USING GIST (geom);
