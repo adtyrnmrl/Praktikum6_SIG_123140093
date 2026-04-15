@@ -1,0 +1,3 @@
+VACUUM ANALYZE fasilitas_publik;
+VACUUM ANALYZE wilayah;
+VACUUM ANALYZE jalan;
